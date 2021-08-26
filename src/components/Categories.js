@@ -2,7 +2,7 @@ import { Paper } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import randomColor from "randomcolor";
 import DoneIcon from "@material-ui/icons/Done";
-import { Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Category({ name, random_color, handleClick, checked }) {
   return (
@@ -21,10 +21,9 @@ function Category({ name, random_color, handleClick, checked }) {
   );
 }
 
-function Categories() {
+function Categories({ collectInfo, checked }) {
   const [categories, setCategories] = useState([]);
   const [colors, setColors] = useState([]);
-  const [checked, setChecked] = useState("");
 
   useEffect(() => {
     fetch("https://opentdb.com/api_category.php").then((res) => {
@@ -50,14 +49,6 @@ function Categories() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checked]);
 
-  const handleClick = (e) => {
-    if (e.target.tagName === "DIV") {
-      setChecked(e.target.firstChild.innerText);
-    } else if (e.target.tagName === "H5") {
-      setChecked(e.target.innerText);
-    }
-  };
-
   return (
     <div className="categoryPage">
       <h1 className="categoriesHeader">Choose Category</h1>
@@ -70,14 +61,18 @@ function Categories() {
                 key={item.id}
                 categories={categories}
                 random_color={colors[index]}
-                handleClick={handleClick}
+                handleClick={collectInfo}
                 checked={categories[index].checked}
               />
             );
           })}
       </div>
       <Link to="/level">
-        <button type="button" className="btn btn-primary nextBtn">
+        <button
+          // onClick={=()}
+          type="button"
+          className="btn btn-primary nextBtn"
+        >
           Next
         </button>
       </Link>

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 // import { Switch, Route, Link } from "react-router-dom";
 
-function Questions() {
+function Questions({ url = "https://opentdb.com/api.php?amount=10" }) {
   const [questions, setQuestions] = useState([]);
+  const [checked, setChecked] = useState("");
 
   useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=10").then((res) => {
+    fetch(url).then((res) => {
       res.json().then((data) => {
         setQuestions(data.results);
       });
