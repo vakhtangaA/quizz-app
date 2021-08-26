@@ -1,13 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: aliceblue;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.categoryWrapper {
+  display: grid;
+  max-width: 80%;
+  gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.categoriesHeader {
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 3rem;
+  color: rgb(12, 91, 94);
+  text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .categoryWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .categoryWrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .categoryWrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.MuiPaper-rounded {
+  padding: 1rem;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+
+.MuiPaper-rounded:hover {
+  filter: brightness(0.9);
+}
+
+.MuiPaper-rounded h5 {
+  color: #232b2b;
+}
+
+.checkIcon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.nextBtn {
+  width: 200px;
+  font-size: 1.3rem;
+  margin: 2rem 0;
+}
+
+.categoryPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.levelPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.levelPage h1 {
+  margin: 4rem 0;
+  font-size: 4rem;
+  color: teal;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .levelPage h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+}
+
+.levelBtn {
+  width: 200px;
+  height: 60px;
+  display: block;
+  margin-top: 3rem;
+  /* margin: 1rem; */
+}
+
+.levelNextBtn {
+  margin-top: 5rem;
+  width: 120px;
 }
