@@ -2,7 +2,6 @@ import { Paper } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import randomColor from "randomcolor";
 import DoneIcon from "@material-ui/icons/Done";
-import CircularProgress from "@material-ui/core/CircularProgress";
 import { Link } from "react-router-dom";
 
 function Category({ name, random_color, handleClick, checked }) {

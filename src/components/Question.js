@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import CircularProgress from "@material-ui/core/CircularProgress";
 import { Paper, Button } from "@material-ui/core";
 
 function Question({ questions }) {
@@ -8,7 +7,6 @@ function Question({ questions }) {
   const [answers, setAnswers] = useState([]);
   const [currentQuestion, setcurrentQuestion] = useState({});
   const [score, setScore] = useState(0);
-  // const [questions, setquestions] = useState(null);
 
   function decodeHtmlEntities(input) {
     var doc = new DOMParser().parseFromString(input, "text/html");
@@ -56,7 +54,7 @@ function Question({ questions }) {
       nodeBtn.classList.add("btn");
       nodeBtn.classList.add("btn-primary");
 
-      a.href = "/quizz-app";
+      a.href = "/saqme.me/quizz-app/";
       a.appendChild(nodeBtn);
       node.appendChild(textNode);
       nodeBtn.appendChild(BtntextNode);

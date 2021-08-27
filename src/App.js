@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Categories from "./components/Categories";
-import Questions from "./components/Questions";
 import Level from "./components/Level";
 import Question from "./components/Question";
 
@@ -89,9 +88,6 @@ function App() {
 
   return (
     <Switch>
-      <Route path="/questions" exact>
-        <Questions url="https://opentdb.com/api.php?amount=10" />
-      </Route>
       <Route path="/level" exact>
         <Level collectInfo={handleClick} handleStart={handleStart} />
       </Route>
