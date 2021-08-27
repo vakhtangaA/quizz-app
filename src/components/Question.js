@@ -54,7 +54,7 @@ function Question({ questions }) {
       nodeBtn.classList.add("btn");
       nodeBtn.classList.add("btn-primary");
 
-      a.href = "./";
+      a.href = "./quizz-app";
       a.appendChild(nodeBtn);
       node.appendChild(textNode);
       nodeBtn.appendChild(BtntextNode);
