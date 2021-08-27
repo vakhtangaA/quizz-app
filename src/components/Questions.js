@@ -11,7 +11,7 @@ function Questions({ url = "https://opentdb.com/api.php?amount=10" }) {
         setQuestions(data.results);
       });
     });
-  }, []);
+  }, [url]);
 
   function decodeHtmlEntities(input) {
     var doc = new DOMParser().parseFromString(input, "text/html");
